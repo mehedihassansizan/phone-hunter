@@ -87,12 +87,13 @@ const displayDetails = (data) =>{
     const exampleModalLabel = document.getElementById('exampleModalLabel');
     exampleModalLabel.innerText = data.name;
     const detailsBody = document.getElementById('details-body')
+    detailsBody.innerHTML = ``;
     const newDiv = document.createElement('div')
     newDiv.innerHTML = `
         <ul>
             <li>Storage: ${data.mainFeatures ? data.mainFeatures.storage : 'No data Found'}</li>
-            <li>DisplaySize: ${data.mainFeatures.displaySize} </li>
-            <li>Release Date: ${data.releaseDate} </li>
+            <li>DisplaySize: ${data.mainFeatures ? data.mainFeatures.displaySize : 'No Data Found'} </li>
+            <li>Release Date: ${data.releaseDate ? data.releaseDate : 'No Data Found'} </li>
         </ul>
     `;
 
